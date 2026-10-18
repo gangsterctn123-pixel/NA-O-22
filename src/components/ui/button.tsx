@@ -8,11 +8,11 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-primary text-primary-foreground shadow-sm shadow-green-500/20 hover:brightness-110",
-        navy: "bg-navy-900 text-white hover:bg-navy-800 dark:bg-white dark:text-navy-900 dark:hover:bg-mist",
+        primary: "bg-primary text-primary-foreground shadow-sm shadow-brand-blue/20 hover:bg-brand-blue-600",
+        navy: "bg-brand-blue text-white hover:bg-brand-blue-600",
         outline: "border border-border bg-transparent hover:bg-surface",
         ghost: "hover:bg-surface",
-        gold: "bg-gold-400 text-navy-900 hover:bg-gold-500",
+        gold: "bg-gold-400 text-black hover:bg-gold-500",
       },
       size: {
         sm: "h-9 px-3 text-sm",

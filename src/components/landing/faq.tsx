@@ -33,7 +33,7 @@ export function getFaq(priceCents: number) {
 
 export function Faq({ priceCents }: { priceCents: number }) {
   return (
-    <section id="faq" className="scroll-mt-20 bg-surface py-20 sm:py-28">
+    <section id="faq" className="scroll-mt-20 bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <SectionHeading eyebrow="Perguntas frequentes" title="Tire suas dúvidas" />
         <Accordion type="single" collapsible className="rounded-2xl border border-border bg-card px-6">

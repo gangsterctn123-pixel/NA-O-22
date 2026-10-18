@@ -23,17 +23,17 @@ export function Pricing({ priceCents, demoMode }: { priceCents: number; demoMode
           title="Um preço simples, sem surpresas"
           description="Renovação mensal automática. Cancele a qualquer momento pela sua conta."
         />
-        <div className="mx-auto max-w-md overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-navy-900/10">
-          <div className="bg-navy-900 p-8 text-white">
+        <div className="mx-auto max-w-md overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-black/10">
+          <div className="border-b border-border bg-card p-8">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold">Membro NAÇÃO 22</h3>
-              <Badge variant="gold" className="bg-gold-400 text-navy-900">Mais completo</Badge>
+              <Badge variant="gold" className="bg-gold-400 text-black">Mais completo</Badge>
             </div>
             <p className="mt-6 flex items-end gap-1">
               <span className="text-5xl font-extrabold tracking-tight" data-testid="price">{formatBRL(priceCents)}</span>
-              <span className="mb-1.5 text-white/70">/mês</span>
+              <span className="mb-1.5 text-muted">/mês</span>
             </p>
-            <p className="mt-2 text-sm text-white/70">Cobrança mensal recorrente. Sem fidelidade.</p>
+            <p className="mt-2 text-sm text-muted">Cobrança mensal recorrente. Sem fidelidade.</p>
           </div>
           <div className="p-8">
             <ul className="space-y-3">

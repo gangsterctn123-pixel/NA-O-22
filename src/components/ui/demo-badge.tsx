@@ -7,7 +7,7 @@ export function DemoBadge({ className, label = "Exemplo demonstrativo" }: { clas
     <span
       data-demo
       className={cn(
-        "inline-flex items-center gap-1 rounded-full border border-dashed border-gold-500 bg-gold-400/15 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-navy-900 dark:text-gold-400",
+        "inline-flex items-center gap-1 rounded-full border border-dashed border-gold-500 bg-gold-400/15 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-black",
         className,
       )}
     >

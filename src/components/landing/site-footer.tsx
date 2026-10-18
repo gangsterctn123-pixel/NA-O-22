@@ -15,7 +15,7 @@ export function SiteFooter() {
             <Link href="/suporte" className="hover:text-foreground">Suporte</Link>
           </nav>
         </div>
-        <p className="mt-8 rounded-xl bg-surface p-4 text-sm text-muted" data-testid="independence-notice">
+        <p className="mt-8 rounded-xl border border-border bg-card p-4 text-sm text-muted" data-testid="independence-notice">
           <strong className="text-foreground">Aviso de independência.</strong> {site.independenceNotice}
         </p>
         <p className="mt-6 text-xs text-muted">© {new Date().getFullYear()} {site.name}. Todos os direitos reservados.</p>

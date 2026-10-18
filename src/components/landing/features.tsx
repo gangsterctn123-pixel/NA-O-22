@@ -37,7 +37,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="funcionalidades" className="scroll-mt-20 bg-surface py-20 sm:py-28">
+    <section id="funcionalidades" className="scroll-mt-20 bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Funcionalidades"
@@ -46,8 +46,8 @@ export function Features() {
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map(({ icon: Icon, title, text }) => (
-            <Card key={title} className="group p-6 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-navy-900/5 transition-all duration-300">
-              <div className="mb-4 inline-flex size-11 items-center justify-center rounded-xl bg-navy-900 text-gold-400 transition-colors group-hover:bg-primary group-hover:text-white dark:bg-white/10">
+            <Card key={title} className="group p-6 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/5 transition-all duration-300">
+              <div className="mb-4 inline-flex size-11 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue transition-colors group-hover:bg-brand-blue group-hover:text-white">
                 <Icon className="size-5" aria-hidden />
               </div>
               <h3 className="text-lg font-bold">{title}</h3>

@@ -6,7 +6,7 @@ import { SectionHeading } from "./section-heading";
 
 export function CommunityPreview() {
   return (
-    <section id="comunidade" className="scroll-mt-20 bg-surface py-20 sm:py-28">
+    <section id="comunidade" className="scroll-mt-20 bg-background py-20 sm:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
         <div>
           <SectionHeading
@@ -45,7 +45,7 @@ export function CommunityPreview() {
           ].map((p) => (
             <article key={p.name} className="mt-4 rounded-xl border border-border p-4">
               <div className="flex items-center gap-3">
-                <span className="flex size-9 items-center justify-center rounded-full bg-navy-900 text-xs font-bold text-white dark:bg-white/10">
+                <span className="flex size-9 items-center justify-center rounded-full bg-brand-blue text-xs font-bold text-white">
                   {p.initials}
                 </span>
                 <div>

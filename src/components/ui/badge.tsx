@@ -8,9 +8,9 @@ const badgeVariants = cva(
     variants: {
       variant: {
         default: "bg-surface text-foreground",
-        green: "bg-green-500/10 text-green-600 dark:text-green-400",
-        gold: "bg-gold-400/20 text-navy-900 dark:text-gold-400",
-        navy: "bg-navy-900 text-white dark:bg-white/10",
+        green: "bg-green-500/10 text-black ring-1 ring-inset ring-green-500/30 [&_svg]:text-green-500",
+        gold: "bg-gold-400/25 text-black",
+        navy: "bg-brand-blue text-white",
         outline: "border border-border text-muted",
       },
     },

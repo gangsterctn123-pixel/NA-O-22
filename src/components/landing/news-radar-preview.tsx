@@ -33,7 +33,7 @@ export function NewsRadarPreview() {
           <div className="space-y-4">
             {demoNews.map((n) => (
               <Card key={n.title} className="flex gap-4 p-4">
-                <div className="hidden size-24 shrink-0 rounded-xl bg-gradient-to-br from-navy-900 to-navy-700 sm:block" aria-hidden />
+                <div className="hidden size-24 shrink-0 rounded-xl bg-gradient-to-br from-brand-blue/15 to-gold-400/25 sm:block" aria-hidden />
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
                     <Badge variant="green">{n.category}</Badge>
@@ -58,26 +58,26 @@ export function NewsRadarPreview() {
             ))}
           </div>
 
-          <Card className="bg-navy-900 p-6 text-white dark:bg-card">
+          <Card className="p-6">
             <div className="flex items-center justify-between">
               <h3 className="flex items-center gap-2 text-lg font-bold">
-                <FileText className="size-5 text-gold-400" aria-hidden /> Radar Político
+                <FileText className="size-5 text-brand-blue" aria-hidden /> Radar Político
               </h3>
-              <DemoBadge className="text-gold-400" />
+              <DemoBadge />
             </div>
-            <p className="mt-2 text-sm text-white/70">
+            <p className="mt-2 text-sm text-muted">
               Dados obtidos de fontes oficiais, como os portais de dados abertos da Câmara e do Senado.
             </p>
             <ul className="mt-6 space-y-3">
               {demoRadar.map((r) => (
-                <li key={r.code} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <li key={r.code} className="rounded-xl border border-border bg-card p-4">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-semibold uppercase tracking-wide text-gold-400">{r.kind}</span>
-                    <span className="text-white/60">{r.body}</span>
+                    <span className="font-semibold uppercase tracking-wide text-brand-blue">{r.kind}</span>
+                    <span className="text-muted">{r.body}</span>
                   </div>
                   <p className="mt-1 font-mono text-sm font-bold">{r.code}</p>
-                  <p className="mt-1 text-sm text-white/70">{r.status}</p>
-                  <span className="mt-2 inline-flex items-center gap-1 text-xs text-green-400">
+                  <p className="mt-1 text-sm text-muted">{r.status}</p>
+                  <span className="mt-2 inline-flex items-center gap-1 text-xs text-brand-blue">
                     <ExternalLink className="size-3" aria-hidden /> Link para a fonte oficial
                   </span>
                 </li>
