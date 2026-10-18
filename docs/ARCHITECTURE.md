@@ -151,7 +151,7 @@ Conteúdo com acusações a pessoas é marcado `requires_legal_review` e nunca e
 | Fase | Entrega | Status |
 |---|---|---|
 | 1 | Arquitetura, identidade visual (logo, tema claro/escuro), landing page, manifest base, CI | **concluída** |
-| 2 | Supabase Auth (cadastro, login, recuperação, confirmação), perfis, onboarding, `proxy.ts`, migrations aplicadas | próxima |
+| 2 | Supabase Auth (cadastro, login, recuperação, confirmação), perfis com username, `proxy.ts`, área logada | **concluída** (onboarding pendente) |
 | 3 | Shell do app (bottom-nav/sidebar), dashboard, feed com filtros, busca, favoritos, scroll infinito, artigo | |
 | 4 | Pipeline de ingestão, revisão editorial, briefing diário, radar (APIs da Câmara/Senado), "Entenda a Notícia" | |
 | 5 | Comunidade (salas, posts, comentários, curtidas, imagens, realtime), denúncias, bloqueios, moderação | |

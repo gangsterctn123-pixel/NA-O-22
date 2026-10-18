@@ -10,6 +10,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // permite builds isolados (ex.: E2E de autenticação) sem sobrescrever o .next padrão
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   images: {
     remotePatterns: [{ protocol: "https", hostname: "*.supabase.co" }],
   },

@@ -9,3 +9,4 @@ playwright-report
 test-results
 .vercel
 supabase/.temp
+.next-e2e-auth

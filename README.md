@@ -14,7 +14,7 @@ Arquitetura, modelagem do banco e plano de fases: **[docs/ARCHITECTURE.md](docs/
 | Fase | Escopo | Status |
 |---|---|---|
 | 1 | Arquitetura, identidade visual, landing page | ✅ |
-| 2 | Autenticação, banco, perfis | ⏳ próxima |
+| 2 | Autenticação (Supabase Auth), perfis, rotas protegidas, área logada | ✅ código pronto — requer configurar o Supabase |
 | 3–8 | Feed, briefing/radar/IA, comunidade, biblioteca, assinaturas, notificações/PWA | planejadas |
 
 ## Requisitos
@@ -30,6 +30,19 @@ npm install
 cp .env.example .env.local   # na Fase 1 nada é obrigatório
 npm run dev                  # http://localhost:3000
 ```
+
+### Autenticação
+
+Cadastro, login, sessão persistente, recuperação de senha, logout e rotas protegidas usam Supabase Auth.
+**Passo a passo de configuração: [docs/SUPABASE_SETUP.md](docs/SUPABASE_SETUP.md).**
+Sem as variáveis do Supabase, o site funciona, mas as telas de login exibem "acesso temporariamente indisponível".
+
+| Rota | Função |
+|---|---|
+| `/cadastro`, `/entrar`, `/recuperar-senha` | públicas (logado é redirecionado ao app) |
+| `/redefinir-senha` | nova senha (via link do e-mail ou pelo perfil) |
+| `/auth/confirm` | destino dos links de e-mail |
+| `/inicio`, `/noticias`, `/comunidade`, `/biblioteca`, `/perfil` | área logada (protegida por `src/proxy.ts` + checagem no servidor) |
 
 ### Banco de dados (Supabase)
 
@@ -56,6 +69,7 @@ update public.profiles set role = 'admin' where id = '<uuid-do-usuario>';
 | `npm run typecheck` | checagem de tipos |
 | `npm test` | testes unitários (Vitest) |
 | `npm run test:e2e` | testes ponta a ponta (Playwright, desktop + mobile) |
+| `npm run test:e2e:auth` | fluxos de login/cadastro contra um Supabase **simulado** (só para testes) |
 
 Se o Chromium já estiver instalado em outro caminho: `PLAYWRIGHT_CHROMIUM_PATH=/caminho/chrome npm run test:e2e`.
 

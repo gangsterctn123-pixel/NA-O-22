@@ -1,22 +1,32 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Construction } from "lucide-react";
-import { Logo } from "@/components/brand/logo";
-import { Button } from "@/components/ui/button";
+import { AuthShell } from "@/features/auth/components/auth-shell";
+import { SignInForm } from "@/features/auth/components/sign-in-form";
+import { FormAlert } from "@/features/auth/components/form-fields";
+import { safeNextPath } from "@/features/auth/routes";
+import { isSupabaseConfigured } from "@/lib/config/env";
 
 export const metadata: Metadata = { title: "Entrar" };
 
-// Fase 2: formulário com Supabase Auth.
-export default function Page() {
+const notices: Record<string, { tone: "error" | "success" | "info"; text: string }> = {
+  link: { tone: "error", text: "O link é inválido ou expirou. Solicite um novo ou entre com sua senha." },
+  indisponivel: { tone: "error", text: "O acesso está temporariamente indisponível." },
+  saiu: { tone: "success", text: "Você saiu da sua conta." },
+};
+
+export default async function SignInPage({ searchParams }: PageProps<"/entrar">) {
+  const params = await searchParams;
+  const next = typeof params.next === "string" ? safeNextPath(params.next) : undefined;
+  const erro = typeof params.erro === "string" ? params.erro : undefined;
+  const notice = erro ? notices[erro] ?? notices.link : params.saiu ? notices.saiu : undefined;
+
   return (
-    <main className="flex min-h-dvh flex-col items-center justify-center gap-6 bg-surface px-4 text-center">
-      <Link href="/"><Logo /></Link>
-      <div className="max-w-sm rounded-2xl border border-border bg-card p-8">
-        <Construction className="mx-auto size-8 text-primary" aria-hidden />
-        <h1 className="mt-4 text-2xl font-extrabold">Entrar</h1>
-        <p className="mt-2 text-muted">A autenticação será ativada na próxima fase de implementação.</p>
-        <Button asChild variant="outline" className="mt-6"><Link href="/">Voltar ao início</Link></Button>
-      </div>
-    </main>
+    <AuthShell title="Entrar" subtitle="Bem-vindo de volta à NAÇÃO 22.">
+      {notice && (
+        <div className="mb-5">
+          <FormAlert tone={notice.tone}>{notice.text}</FormAlert>
+        </div>
+      )}
+      <SignInForm next={next} disabled={!isSupabaseConfigured} />
+    </AuthShell>
   );
 }
